@@ -1,1 +1,7 @@
-# IND-CVA1_ESORICS_2024
+This repository provides the code that has been used to obtain the results for our [ESORICS 2024 paper](https://link.springer.com/chapter/10.1007/978-3-031-70903-6_23). More specifically, the results are for the number of queries made to the ciphertext verification oracle and the number of reactions obtained to directly recover the secret key for four popular FHE libraries, namely BFV, BGV, FHEW, and TFHE. The results are obtained on a system running on Intel Xeon Silver 4210R @ 2.4 GHz with 128 GB RAM, 27.5 MB LLC and powered by Ubuntu 20.04 LTS. The results obtained via execution of the provided scripts should be similar to the results quoted in our paper.
+
+Before proceeding with the demo code, please run `sudo bash setup.sh` to install the prerequisite libraries. The prerequisites include CMake, protobuf-compiler and C/C++. Please skip this setup step if these tools are already installed on the testing system. We have used cmake 3.29.3, protobuf-compiler 3.6.1, and gcc/g++ 9.4.0, so anything above these should also work.
+
+To generate the results for a specific scheme, move to the corresponding directory and run `sudo bash setup_library.sh`. These will install the specific FHE library. To generate the results, run `sudo bash generate_results.sh`. Finally, to clean up the temporary files for subsequent reruns (we scritly advise to do so to ensure correctness of the result), run `sudo bash clean_temporary_files.sh`.
+
+For any queries, please feel free to email them to us on [bhuvneshchaturvedi2512@kgpian.iitkgp.ac.in](mailto:bhuvneshchaturvedi2512@kgpian.iitkgp.ac.in).
